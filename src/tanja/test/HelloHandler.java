@@ -44,9 +44,10 @@ public class HelloHandler extends AbstractHandler
         PrintWriter out = response.getWriter();
 
         String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
         out.println("<h1>" + firstname + "</h1>");
         FileWriter fileWriter=new FileWriter("tanja_firstname.txt");
-        fileWriter.write(firstname);
+        fileWriter.write(firstname + "\n" + lastname);
         fileWriter.close();
 
         if (body != null)
